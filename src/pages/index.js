@@ -51,6 +51,9 @@ const Map = styled.div`
       &:hover {
         fill: #013220;
         -webkit-filter: drop-shadow(10px 0px 6px rgba(0, 0, 0, 0.3));
+        -moz-filter: drop-shadow(10px 0px 6px rgba(0, 0, 0, 0.3));
+        -ms-filter: drop-shadow(10px 0px 6px rgba(0, 0, 0, 0.3));
+        -o-filter: drop-shadow(10px 0px 6px rgba(0, 0, 0, 0.3));
         filter: drop-shadow(10px 0px 6px rgba(0, 0, 0, 0.3));
       }
 
@@ -58,6 +61,9 @@ const Map = styled.div`
       &:focus {
         fill: #013220;
         -webkit-filter: drop-shadow(10px 0px 6px rgba(0, 0, 0, 0.3));
+        -moz-filter: drop-shadow(10px 0px 6px rgba(0, 0, 0, 0.3));
+        -ms-filter: drop-shadow(10px 0px 6px rgba(0, 0, 0, 0.3));
+        -o-filter: drop-shadow(10px 0px 6px rgba(0, 0, 0, 0.3));
         filter: drop-shadow(10px 0px 6px rgba(0, 0, 0, 0.3));
       }
     }
