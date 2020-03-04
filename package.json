@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "thc-solutions-marijuana-state-policies",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "description": "Landing page for information on all U.S. states marijuana policies.",
+  "version": "1.0",
+  "author": "Nathan Dalton <ndaltondev@gmail.com>",
   "dependencies": {
     "@south-paw/react-vector-maps": "^3.0.0",
     "babel-plugin-styled-components": "^1.10.7",
@@ -25,24 +25,18 @@
   "devDependencies": {
     "prettier": "^1.19.1"
   },
-  "keywords": [
-    "gatsby"
-  ],
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
-    "serve": "gatsby serve",
+    "serve": "yarn build && gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/ThermalIDTechnologies/thc-marijuana-state-policy-lp"
   }
 }

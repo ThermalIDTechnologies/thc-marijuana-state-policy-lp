@@ -5,8 +5,10 @@ import React from "react"
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
+      backgroundImage: `url(https://res.cloudinary.com/crjars/image/upload/f_auto,q_auto:best/v1581975492/Dope-background-image.jpg)`,
+      marginBottom: `3rem`,
+      padding: `2rem 1.0875rem`,
+      position: `relative`,
     }}
   >
     <div
@@ -16,17 +18,28 @@ const Header = ({ siteTitle }) => (
         padding: `1.45rem 1.0875rem`,
       }}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+      <div
+      style={{
+        margin: `0`,
+        position: `absolute`,
+        width: `200px`,
+        height: `200px`,
+        left: `50%`,
+        marginLeft: `-100px`,
+        top: `10%`,
+        zIndex: `10`,
+      }}
+    >
+      <a
+        href="https://thclabelsolutions.com"
+        style={{
+          color: `white`,
+          textDecoration: `none`,
+        }}
+      >
+          <img alt="The House of Custom Logo" src="https://res.cloudinary.com/crjars/image/upload/c_scale,f_auto,q_auto:best,w_200/v1580234191/thc-logo_300x.png" />
+      </a>
+    </div>
     </div>
   </header>
 )
