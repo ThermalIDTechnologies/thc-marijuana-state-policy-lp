@@ -18,18 +18,18 @@ const Map = styled.div`
       /* fill: #4a7729; */
       cursor: pointer;
       outline: none;
-      -webkit-transition: 0.5s -webkit-filter ease-in-out;
+      /* -webkit-transition: 0.5s -webkit-filter ease-in-out;
       -moz-transition: 0.5s -moz-filter ease-in-out;
       -moz-transition: 0.5s filter ease-in-out;
       -ms-transition: 0.5s -ms-filter ease-in-out;
       -o-transition: 0.5s -o-filter ease-in-out;
-      transition: 0.5s filter ease-in-out, 0.5s -webkit-filter ease-in-out;
-      /* -webkit-transition: 0.5s fill ease-in-out;
+      transition: 0.5s filter ease-in-out, 0.5s -webkit-filter ease-in-out; */
+      -webkit-transition: 0.5s fill ease-in-out;
       -moz-transition: 0.5s fill ease-in-out;
       -moz-transition: 0.5s fill ease-in-out;
       -ms-transition: 0.5s fill ease-in-out;
       -o-transition: 0.5s fill ease-in-out;
-      transition: 0.5s  fill ease-in-out, 0.5s fill ease-in-out; */
+      transition: 0.5s  fill ease-in-out, 0.5s fill ease-in-out;
 
       &[id="rec-and-med"] {
         fill: #4a7729;
@@ -50,21 +50,21 @@ const Map = styled.div`
       // When a layer is hovered
       &:hover {
         fill: #013220;
-        -webkit-filter: drop-shadow(10px 0px 6px rgba(0, 0, 0, 0.3));
+        /* -webkit-filter: drop-shadow(10px 0px 6px rgba(0, 0, 0, 0.3));
         -moz-filter: drop-shadow(10px 0px 6px rgba(0, 0, 0, 0.3));
         -ms-filter: drop-shadow(10px 0px 6px rgba(0, 0, 0, 0.3));
         -o-filter: drop-shadow(10px 0px 6px rgba(0, 0, 0, 0.3));
-        filter: drop-shadow(10px 0px 6px rgba(0, 0, 0, 0.3));
+        filter: drop-shadow(10px 0px 6px rgba(0, 0, 0, 0.3)); */
       }
 
       // When a layer is focused.
       &:focus {
         fill: #013220;
-        -webkit-filter: drop-shadow(10px 0px 6px rgba(0, 0, 0, 0.3));
+        /* -webkit-filter: drop-shadow(10px 0px 6px rgba(0, 0, 0, 0.3));
         -moz-filter: drop-shadow(10px 0px 6px rgba(0, 0, 0, 0.3));
         -ms-filter: drop-shadow(10px 0px 6px rgba(0, 0, 0, 0.3));
         -o-filter: drop-shadow(10px 0px 6px rgba(0, 0, 0, 0.3));
-        filter: drop-shadow(10px 0px 6px rgba(0, 0, 0, 0.3));
+        filter: drop-shadow(10px 0px 6px rgba(0, 0, 0, 0.3)); */
       }
     }
   }
