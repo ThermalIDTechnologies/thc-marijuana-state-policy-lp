@@ -5,6 +5,7 @@ import styled from "styled-components"
 import usa from "../maps/usa.json"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import "../components/layout.css"
 
 const Map = styled.div`
   margin: 1rem auto;
@@ -29,7 +30,7 @@ const Map = styled.div`
       -moz-transition: 0.5s fill ease-in-out;
       -ms-transition: 0.5s fill ease-in-out;
       -o-transition: 0.5s fill ease-in-out;
-      transition: 0.5s  fill ease-in-out, 0.5s fill ease-in-out;
+      transition: 0.5s fill ease-in-out, 0.5s fill ease-in-out;
 
       &[id="rec-and-med"] {
         fill: #4a7729;
@@ -71,11 +72,11 @@ const Map = styled.div`
 `
 
 const IndexPage = () => {
-  const [clicked, setClicked] = useState('None');
+  const [clicked, setClicked] = useState("None")
 
   const layerProps = {
     onClick: ({ target }) => setClicked(target.attributes.name.value),
-  };
+  }
 
   return (
     <Layout>
@@ -83,7 +84,33 @@ const IndexPage = () => {
       <Map>
         <VectorMap {...usa} layerProps={layerProps} />
       </Map>
-      <p>Clicked: <code>{clicked}</code></p>
+      <p>
+        Clicked: <code>{clicked}</code>
+      </p>
+      <div style={{ display: `flex`, justifyContent: `center`, marginTop: `3rem` }}>
+      <div className="my-legend">
+        <div className="legend-title">United States Cannabis Program Legend</div>
+        <div className="legend-scale">
+          <ul className="legend-labels">
+            <li>
+              <span style={{background:`#4a7729`}}></span>Recreational & Medical Cannabis Program
+            </li>
+            <li>
+              <span style={{background:`#97d700`}}></span>Medical Cannabis Program
+            </li>
+            <li>
+              <span style={{background:`#fcd299`}}></span>CBD/Low THC Program
+            </li>
+            <li>
+              <span style={{background:`lightgray`}}></span>No Public Cannabis Program
+            </li>
+          </ul>
+        </div>
+        <div className="legend-source">
+          Source: <a href="#">Name of source</a>
+        </div>
+      </div>
+      </div>
     </Layout>
   )
 }
