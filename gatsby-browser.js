@@ -1,7 +1,13 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+import React from "react"
+import GlobalStyles from "./src/components/styles/GlobalStyles"
+import { ThemeProvider } from "styled-components"
+import theme from "./src/components/theme"
 
-// You can delete this file if you're not using it
+export const wrapRootElement = ({ element }) => (
+  <ThemeProvider theme={theme}>
+    {element}
+    <GlobalStyles />
+  </ThemeProvider>
+)
+
+require("typeface-raleway")

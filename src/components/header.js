@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
-const Header = ({ siteTitle }) => (
+const Header = () => (
   <header
     style={{
       backgroundImage: `url(https://res.cloudinary.com/crjars/image/upload/f_auto,q_auto:best/v1581975492/Dope-background-image.jpg)`,
@@ -22,12 +22,13 @@ const Header = ({ siteTitle }) => (
       style={{
         margin: `0`,
         position: `absolute`,
-        width: `200px`,
-        height: `200px`,
+        width: `180px`,
+        height: `180px`,
         left: `50%`,
-        marginLeft: `-100px`,
-        top: `10%`,
+        marginLeft: `-90px`,
+        top: `20%`,
         zIndex: `10`,
+        
       }}
     >
       <a
@@ -37,7 +38,7 @@ const Header = ({ siteTitle }) => (
           textDecoration: `none`,
         }}
       >
-          <img alt="The House of Custom Logo" src="https://res.cloudinary.com/crjars/image/upload/c_scale,f_auto,q_auto:best,w_200/v1580234191/thc-logo_300x.png" />
+          <img alt="The House of Custom Logo" src="https://res.cloudinary.com/crjars/image/upload/c_scale,f_auto,q_auto:best,w_180/v1580234191/thc-logo_300x.png" />
       </a>
     </div>
     </div>
