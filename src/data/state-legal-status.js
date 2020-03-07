@@ -332,7 +332,8 @@ export const statesLegality = [
     state: "Wyoming",
     legal: "No",
     medical: "No",
-    cbd: "Yes"
+    cbd: "Yes",
+    color: "#fcd299",
   },
   {
     id: "Mt",
