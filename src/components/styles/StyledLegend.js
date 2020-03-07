@@ -36,7 +36,7 @@ export const MapLegend = styled.div`
             width: 30px;
             margin-right: 5px;
             margin-left: 0;
-            border: 1px solid #999;
+            border-radius: 3px;
           }
         }
         

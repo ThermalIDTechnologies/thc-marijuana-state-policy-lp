@@ -1,7 +1,7 @@
 import React from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
-import { ModalWrapper, ModalCard } from "./styles/StyledModal"
+import { ModalWrapper, ModalCard, H2 } from "./styles/StyledModal"
 import { statesLegality } from "./../data/state-legal-status"
 
 const Modal = ({ isVisible, setVisible, usStateName }) => {
@@ -70,9 +70,9 @@ const Modal = ({ isVisible, setVisible, usStateName }) => {
               {getStateData.map(stateData => {
                 return (
                   <div key={stateData.id}>
-                    <h2>{stateData.state}</h2>
+                    <H2 bgColor={stateData.color} color={stateData.legal === "Yes" ? "#FFFFFF" : "#000000"}>{stateData.state}</H2>
                     <p>
-                      Recreational Cannabis Program:{" "}
+                      Recreational Cannabis Program:{" "} :
                       {stateData.legal === "Yes" ? <GreenCheck /> : <RedX />}
                     </p>
                     <p>

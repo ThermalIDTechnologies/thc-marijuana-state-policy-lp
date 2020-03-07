@@ -2,47 +2,28 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
+import { HeaderContainer } from "./styles/StyledHeader"
+
 const Header = () => (
-  <header
-    style={{
-      backgroundImage: `url(https://res.cloudinary.com/crjars/image/upload/f_auto,q_auto:best/v1581975492/Dope-background-image.jpg)`,
-      marginBottom: `3rem`,
-      padding: `2rem 1.0875rem`,
-      position: `relative`,
+  <HeaderContainer
+    initial={{ opacity: 0, y: -40 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -40 }}
+    transition={{
+      type: "spring",
+      damping: 300,
+      delay: 0.3,
     }}
   >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <div
-      style={{
-        margin: `0`,
-        position: `absolute`,
-        width: `180px`,
-        height: `180px`,
-        left: `50%`,
-        marginLeft: `-90px`,
-        top: `20%`,
-        zIndex: `10`,
-        
-      }}
-    >
-      <a
-        href="https://thclabelsolutions.com"
-        style={{
-          color: `white`,
-          textDecoration: `none`,
-        }}
-      >
-          <img alt="The House of Custom Logo" src="https://res.cloudinary.com/crjars/image/upload/c_scale,f_auto,q_auto:best,w_180/v1580234191/thc-logo_300x.png" />
+    <div>
+      <a href="https://thclabelsolutions.com">
+        <img
+          alt="The House of Custom Logo"
+          src="https://res.cloudinary.com/crjars/image/upload/c_scale,f_auto,q_auto:best,w_180/v1580234191/thc-logo_300x.png"
+        />
       </a>
     </div>
-    </div>
-  </header>
+  </HeaderContainer>
 )
 
 Header.propTypes = {
