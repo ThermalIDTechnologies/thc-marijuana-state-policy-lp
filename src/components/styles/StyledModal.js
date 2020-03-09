@@ -24,24 +24,28 @@ export const ModalCard = styled(motion.div)(
     background: white;
     border-radius: 5px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    padding: 20px 20px 40px;
+    padding: 30px 20px 40px;
     max-width: 400px;
     width: 100%;
     position: relative;
 
     button {
       align-self: flex-end;
-      background: ${props.theme.colors.superDarkGreen};
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: red;
       position: absolute;
-      top: -5px;
-      right: -5px;
+      top: 8px;
+      right: 8px;
       width: 30px;
       height: 30px;
       border-radius: 50%;
       border: none;
-      color: ${props.theme.colors.lGrey};
+      color: #FFF;
       font-weight: bolder;
       cursor: pointer;
+      font-size: 1.1rem;
     }
 
     div {

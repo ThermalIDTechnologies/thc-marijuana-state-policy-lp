@@ -24,6 +24,15 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 600;
   }
 
+  td {
+    font-size: 90%;
+  }
+
+  @media screen and (min-width: 480px) {
+  td {
+    font-size: 100%;
+  }
+}
 `
 
 export default GlobalStyle

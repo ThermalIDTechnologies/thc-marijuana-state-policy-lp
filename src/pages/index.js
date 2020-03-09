@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { VectorMap } from "@south-paw/react-vector-maps"
 import Legend from './../components/Legend'
 import Modal from './../components/Modal';
+import StateDataTable from './../components/StateDataTable';
 
 import usa from "../maps/usa.json"
 import Layout from "../components/layout"
@@ -31,6 +32,7 @@ const IndexPage = () => {
       </Map>
       <Modal isVisible={isVisible} setVisible={setVisible} usStateName={usStateName} />
       <Legend />
+      <StateDataTable />
     </Layout>
   )
 }

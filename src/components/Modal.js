@@ -11,16 +11,16 @@ const Modal = ({ isVisible, setVisible, usStateName }) => {
 
   const GreenCheck = () => {
     return (
-      <span role="img" aria-label="green-checkmark-equals-yes">
-        ✔️
+      <span style={{ fontSize: `1.2rem`, color: `transparent`, textShadow: `0 0 0 green` }} role="img" aria-label="green-checkmark-equals-yes">
+        &#10004;
       </span>
     )
   }
 
   const RedX = () => {
     return (
-      <span role="img" aria-label="red-x-equals-no">
-        ❌
+      <span style={{ fontSize: `1.2rem`, color: `transparent`, textShadow: `0 0 0 red` }} role="img" aria-label="red-x-equals-no">
+        &#10006; 
       </span>
     )
   }
@@ -65,14 +65,14 @@ const Modal = ({ isVisible, setVisible, usStateName }) => {
                 }}
                 onClick={() => setVisible(!isVisible)}
               >
-                X
+                &#10006;
               </motion.button>
               {getStateData.map(stateData => {
                 return (
                   <div key={stateData.id}>
                     <H2 bgColor={stateData.color} color={stateData.legal === "Yes" ? "#FFFFFF" : "#000000"}>{stateData.state}</H2>
                     <p>
-                      Recreational Cannabis Program:{" "} :
+                      Recreational Cannabis Program:{" "} 
                       {stateData.legal === "Yes" ? <GreenCheck /> : <RedX />}
                     </p>
                     <p>
