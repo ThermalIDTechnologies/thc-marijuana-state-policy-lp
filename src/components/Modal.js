@@ -9,9 +9,19 @@ const Modal = ({ isVisible, setVisible, usStateName }) => {
     stateData => stateData.id === usStateName
   )
 
+  console.log(getStateData)
+
   const GreenCheck = () => {
     return (
-      <span style={{ fontSize: `1.2rem`, color: `transparent`, textShadow: `0 0 0 green` }} role="img" aria-label="green-checkmark-equals-yes">
+      <span
+        style={{
+          fontSize: `1.2rem`,
+          color: `transparent`,
+          textShadow: `0 0 0 green`,
+        }}
+        role="img"
+        aria-label="green-checkmark-equals-yes"
+      >
         &#10004;
       </span>
     )
@@ -19,8 +29,16 @@ const Modal = ({ isVisible, setVisible, usStateName }) => {
 
   const RedX = () => {
     return (
-      <span style={{ fontSize: `1.2rem`, color: `transparent`, textShadow: `0 0 0 red` }} role="img" aria-label="red-x-equals-no">
-        &#10006; 
+      <span
+        style={{
+          fontSize: `1.2rem`,
+          color: `transparent`,
+          textShadow: `0 0 0 red`,
+        }}
+        role="img"
+        aria-label="red-x-equals-no"
+      >
+        &#10006;
       </span>
     )
   }
@@ -70,9 +88,14 @@ const Modal = ({ isVisible, setVisible, usStateName }) => {
               {getStateData.map(stateData => {
                 return (
                   <div key={stateData.id}>
-                    <H2 bgColor={stateData.color} color={stateData.legal === "Yes" ? "#FFFFFF" : "#000000"}>{stateData.state}</H2>
+                    <H2
+                      bgColor={stateData.color}
+                      color={stateData.legal === "Yes" ? "#FFFFFF" : "#000000"}
+                    >
+                      {stateData.state}
+                    </H2>
                     <p>
-                      Recreational Cannabis Program:{" "} 
+                      Recreational Cannabis Program:{" "}
                       {stateData.legal === "Yes" ? <GreenCheck /> : <RedX />}
                     </p>
                     <p>
@@ -83,6 +106,14 @@ const Modal = ({ isVisible, setVisible, usStateName }) => {
                       CBD/Low THC Program:{" "}
                       {stateData.cbd === "Yes" ? <GreenCheck /> : <RedX />}
                     </p>
+                    {stateData.pdfLinks &&
+                      stateData.pdfLinks.map(pdfLink => {
+                        return (
+                          <p>
+                            {pdfLink.title}: <a href={pdfLink.link}>PDF</a>
+                          </p>
+                        )
+                      })}
                   </div>
                 )
               })}

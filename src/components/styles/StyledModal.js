@@ -51,6 +51,13 @@ export const ModalCard = styled(motion.div)(
     div {
       display: flex;
       flex-direction: column;
+
+      a {
+        text-decoration: none;
+        color: ${props.theme.colors.darkGreen};
+        font-weight: bold;
+        border-bottom: 2px ${props.theme.colors.biege} solid;
+      }
     }
   `
 )
