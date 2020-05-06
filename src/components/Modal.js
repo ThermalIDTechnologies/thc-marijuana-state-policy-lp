@@ -106,14 +106,18 @@ const Modal = ({ isVisible, setVisible, usStateName }) => {
                       CBD/Low THC Program:{" "}
                       {stateData.cbd === "Yes" ? <GreenCheck /> : <RedX />}
                     </p>
-                    {stateData.pdfLinks &&
-                      stateData.pdfLinks.map(pdfLink => {
-                        return (
-                          <p>
-                            {pdfLink.title}: <a href={pdfLink.link}>PDF</a>
-                          </p>
-                        )
-                      })}
+                    <h3>{stateData.state} Downloadable Resources:</h3>
+                    <section>
+                      {stateData.pdfLinks ?
+                        stateData.pdfLinks.map(pdfLink => {
+                          return (
+                            <div>
+                              <a href={pdfLink.link}><img src="https://res.cloudinary.com/crjars/image/upload/c_scale,f_auto,q_auto:best,w_56/v1588797628/pdf.svg" alt="PDF Icon"/></a>
+                              <p>{pdfLink.title}</p>
+                            </div>
+                          )
+                        }) : <p>Coming Soon!</p>}
+                    </section>
                   </div>
                 )
               })}

@@ -42,21 +42,31 @@ export const ModalCard = styled(motion.div)(
       height: 30px;
       border-radius: 50%;
       border: none;
-      color: #FFF;
+      color: #fff;
       font-weight: bolder;
       cursor: pointer;
       font-size: 1.1rem;
+    }
+
+    h3 {
+      align-self: center;
     }
 
     div {
       display: flex;
       flex-direction: column;
 
-      a {
-        text-decoration: none;
-        color: ${props.theme.colors.darkGreen};
-        font-weight: bold;
-        border-bottom: 2px ${props.theme.colors.biege} solid;
+      section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        div {
+          a {
+            align-self: center;
+            border-bottom: 2px ${props.theme.colors.biege} solid;
+          }
+        }
       }
     }
   `
@@ -68,6 +78,6 @@ export const H2 = styled.h2(
     background-color: ${props.bgColor};
     width: 100%;
     border-radius: 5px;
-    color: ${props.color}
+    color: ${props.color};
   `
 )

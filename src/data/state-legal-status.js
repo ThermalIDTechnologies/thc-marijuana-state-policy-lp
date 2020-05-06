@@ -408,11 +408,11 @@ export const statesLegality = [
     color: "#4a7729",
     pdfLinks: [
       {
-        title: "Ca Label Requirements",
+        title: "Label Requirements",
         link: "https://res.cloudinary.com/crjars/image/upload/v1588701954/state-pdfs/CA_LabelRequirements_Downloadable2_5.4-compressed.pdf",
       },
       {
-        title: "Ca Packaging Requirements",
+        title: "Packaging Requirements",
         link: "https://res.cloudinary.com/crjars/image/upload/v1588718193/state-pdfs/CA_PackagingRequirements_Downloadable2_5.4-compressed.pdf",
       },
     ]
