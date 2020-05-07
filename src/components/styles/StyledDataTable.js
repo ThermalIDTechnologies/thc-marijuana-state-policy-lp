@@ -12,6 +12,12 @@ export const StyledTable = styled(Table)(props => css`
     padding: .3rem;
   }
 
+  td:first-of-type:hover {
+    color: ${props.theme.colors.superDarkGreen};
+    background-color: ${props.theme.colors.biege};
+    font-weight: 500;
+  }
+
   tr:nth-child(even) {
     background-color: ${props.theme.colors.superDarkGreen}26;
   }

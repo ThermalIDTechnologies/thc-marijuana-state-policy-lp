@@ -32,7 +32,7 @@ const IndexPage = () => {
       </Map>
       <Modal isVisible={isVisible} setVisible={setVisible} isTable={isTable} usStateName={usStateName} />
       <Legend />
-      <StateDataTable isVisible={isVisible} setVisible={setVisible} isTable={isTable} setTable={setTable} setUsStateName={setUsStateName}/>
+      <StateDataTable isVisible={isVisible} setVisible={setVisible} setTable={setTable} setUsStateName={setUsStateName}/>
     </Layout>
   )
 }
