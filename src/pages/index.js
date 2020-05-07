@@ -12,17 +12,17 @@ import { Map } from "./../components/styles/StyledMap"
 const IndexPage = () => {
   const [usStateName, setUsStateName] = useState("None")
   const [isVisible, setVisible] = useState(false)
+  const [isTable, setTable] = useState(false)
 
   const getTargetValue = ( target ) => {
     setUsStateName(target.attributes.name.value)
     setVisible(!isVisible)
+    setTable(false)
   }
 
   const layerProps = {
     onClick: ({target}) => {getTargetValue(target)},
   }
-
-  console.log({isVisible})
 
   return (
     <Layout>
@@ -30,9 +30,9 @@ const IndexPage = () => {
       <Map>
         <VectorMap {...usa} layerProps={layerProps} />
       </Map>
-      <Modal isVisible={isVisible} setVisible={setVisible} usStateName={usStateName} />
+      <Modal isVisible={isVisible} setVisible={setVisible} isTable={isTable} usStateName={usStateName} />
       <Legend />
-      <StateDataTable />
+      <StateDataTable isVisible={isVisible} setVisible={setVisible} isTable={isTable} setTable={setTable} setUsStateName={setUsStateName}/>
     </Layout>
   )
 }

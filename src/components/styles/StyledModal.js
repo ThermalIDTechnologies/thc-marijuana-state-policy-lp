@@ -61,6 +61,10 @@ export const ModalCard = styled(motion.div)(
         flex-wrap: wrap;
         justify-content: space-between;
 
+        p {
+          align-self: center;
+        }
+
         div {
           a {
             align-self: center;

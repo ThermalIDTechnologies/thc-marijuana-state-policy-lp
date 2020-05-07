@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { ModalWrapper, ModalCard, H2 } from "./styles/StyledModal"
 import { statesLegality } from "./../data/state-legal-status"
 
-const Modal = ({ isVisible, setVisible, usStateName }) => {
+const Modal = ({ isVisible, setVisible, isTable, usStateName }) => {
   const getStateData = statesLegality.filter(
     stateData => stateData.id === usStateName
   )
@@ -88,35 +88,57 @@ const Modal = ({ isVisible, setVisible, usStateName }) => {
               {getStateData.map(stateData => {
                 return (
                   <div key={stateData.id}>
-                    <H2
-                      bgColor={stateData.color}
-                      color={stateData.legal === "Yes" ? "#FFFFFF" : "#000000"}
-                    >
-                      {stateData.state}
-                    </H2>
-                    <p>
-                      Recreational Cannabis Program:{" "}
-                      {stateData.legal === "Yes" ? <GreenCheck /> : <RedX />}
-                    </p>
-                    <p>
-                      Medical Cannabis Program:{" "}
-                      {stateData.medical === "Yes" ? <GreenCheck /> : <RedX />}
-                    </p>
-                    <p>
-                      CBD/Low THC Program:{" "}
-                      {stateData.cbd === "Yes" ? <GreenCheck /> : <RedX />}
-                    </p>
+                    {isTable === false && (
+                      <>
+                        <H2
+                          bgColor={stateData.color}
+                          color={
+                            stateData.legal === "Yes" ? "#FFFFFF" : "#000000"
+                          }
+                        >
+                          {stateData.state}
+                        </H2>
+                        <p>
+                          Recreational Cannabis Program:{" "}
+                          {stateData.legal === "Yes" ? (
+                            <GreenCheck />
+                          ) : (
+                            <RedX />
+                          )}
+                        </p>
+                        <p>
+                          Medical Cannabis Program:{" "}
+                          {stateData.medical === "Yes" ? (
+                            <GreenCheck />
+                          ) : (
+                            <RedX />
+                          )}
+                        </p>
+                        <p>
+                          CBD/Low THC Program:{" "}
+                          {stateData.cbd === "Yes" ? <GreenCheck /> : <RedX />}
+                        </p>
+                      </>
+                    )}
                     <h3>{stateData.state} Downloadable Resources:</h3>
                     <section>
-                      {stateData.pdfLinks ?
+                      {stateData.pdfLinks ? (
                         stateData.pdfLinks.map(pdfLink => {
                           return (
                             <div>
-                              <a href={pdfLink.link}><img src="https://res.cloudinary.com/crjars/image/upload/c_scale,f_auto,q_auto:best,w_56/v1588797628/pdf.svg" alt="PDF Icon"/></a>
+                              <a href={pdfLink.link}>
+                                <img
+                                  src="https://res.cloudinary.com/crjars/image/upload/c_scale,f_auto,q_auto:best,w_56/v1588797628/pdf.svg"
+                                  alt="PDF Icon"
+                                />
+                              </a>
                               <p>{pdfLink.title}</p>
                             </div>
                           )
-                        }) : <p>Coming Soon!</p>}
+                        })
+                      ) : (
+                        <p>Coming Soon!</p>
+                      )}
                     </section>
                   </div>
                 )
