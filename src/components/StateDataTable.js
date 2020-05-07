@@ -5,8 +5,12 @@ import { statesLegality } from "./../data/state-legal-status"
 import { StyledTable } from "./styles/StyledDataTable"
 import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css"
 
-const StateDataTable = ({ isVisible, setVisible, setTable, setUsStateName }) => {
-
+const StateDataTable = ({
+  isVisible,
+  setVisible,
+  setTable,
+  setUsStateName,
+}) => {
   const sortedStateData = () => {
     function compare(a, b) {
       // Use toUpperCase() to ignore character casing
@@ -28,7 +32,7 @@ const StateDataTable = ({ isVisible, setVisible, setTable, setUsStateName }) => 
   const stateRef = useRef(null)
   console.log(stateRef)
 
-  const handleClick = (stateName) => {
+  const handleClick = stateName => {
     console.log(stateName)
     setUsStateName(stateName)
     setVisible(!isVisible)
@@ -48,11 +52,15 @@ const StateDataTable = ({ isVisible, setVisible, setTable, setUsStateName }) => 
       <Tbody>
         {sortedStateData().map(stateData => {
           return (
-            <Tr key={stateData.id}>
-                <Td onClick={() => handleClick(stateData.id) } style={{ cursor: `pointer` }}>{stateData.state}</Td>
-                <Td>{stateData.legal}</Td>
-                <Td>{stateData.medical}</Td>
-                <Td>{stateData.cbd}</Td>
+            <Tr
+              onClick={() => handleClick(stateData.id)}
+              style={{ cursor: `pointer` }}
+              key={stateData.id}
+            >
+              <Td>{stateData.state}</Td>
+              <Td>{stateData.legal}</Td>
+              <Td>{stateData.medical}</Td>
+              <Td>{stateData.cbd}</Td>
             </Tr>
           )
         })}
