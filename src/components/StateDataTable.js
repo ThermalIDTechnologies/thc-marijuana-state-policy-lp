@@ -2,7 +2,7 @@ import React, { useRef } from "react"
 import { Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table"
 
 import { statesLegality } from "./../data/state-legal-status"
-import { StyledTable } from "./styles/StyledDataTable"
+import { StyledTable, StyledTr } from "./styles/StyledDataTable"
 import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css"
 
 const StateDataTable = ({
@@ -52,16 +52,17 @@ const StateDataTable = ({
       <Tbody>
         {sortedStateData().map(stateData => {
           return (
-            <Tr
+            <StyledTr
               onClick={() => handleClick(stateData.id)}
               style={{ cursor: `pointer` }}
               key={stateData.id}
+              backgroundColor={stateData.color}
             >
               <Td>{stateData.state}</Td>
               <Td>{stateData.legal}</Td>
               <Td>{stateData.medical}</Td>
               <Td>{stateData.cbd}</Td>
-            </Tr>
+            </StyledTr>
           )
         })}
       </Tbody>
