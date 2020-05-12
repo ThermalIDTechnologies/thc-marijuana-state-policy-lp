@@ -120,7 +120,7 @@ const Modal = ({ isVisible, setVisible, isTable, usStateName }) => {
                     )}
                     <h3>{stateData.state} Downloadable Resources:</h3>
                     <section>
-                      {stateData.statePdfs ? (
+                      {stateData.statePdfs[0] ? (
                         stateData.statePdfs.map(statePdf => {
                           return (
                             <div>
@@ -135,7 +135,7 @@ const Modal = ({ isVisible, setVisible, isTable, usStateName }) => {
                           )
                         })
                       ) : (
-                        <p>Coming Soon!</p>
+                        <img src="https://res.cloudinary.com/crjars/image/upload/c_scale,q_auto:best,w_360/v1589264926/very-thoon-gif.gif" alt="Coming soon gif"/>
                       )}
                     </section>
                   </div>

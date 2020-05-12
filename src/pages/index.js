@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 import { VectorMap } from "@south-paw/react-vector-maps"
-import Legend from './../components/Legend'
-import Modal from './../components/Modal';
-import StateDataTable from './../components/StateDataTable';
+import Legend from "./../components/Legend"
+import Modal from "./../components/Modal"
+import StateDataTable from "./../components/StateDataTable"
 
 import usa from "../maps/usa.json"
 import Layout from "../components/layout"
@@ -14,14 +14,16 @@ const IndexPage = () => {
   const [isVisible, setVisible] = useState(false)
   const [isTable, setTable] = useState(false)
 
-  const getTargetValue = ( target ) => {
+  const getTargetValue = target => {
     setUsStateName(target.attributes.name.value)
     setVisible(!isVisible)
     setTable(false)
   }
 
   const layerProps = {
-    onClick: ({target}) => {getTargetValue(target)},
+    onClick: ({ target }) => {
+      getTargetValue(target)
+    },
   }
 
   return (
@@ -30,9 +32,19 @@ const IndexPage = () => {
       <Map>
         <VectorMap {...usa} layerProps={layerProps} />
       </Map>
-      <Modal isVisible={isVisible} setVisible={setVisible} isTable={isTable} usStateName={usStateName} />
+      <Modal
+        isVisible={isVisible}
+        setVisible={setVisible}
+        isTable={isTable}
+        usStateName={usStateName}
+      />
       <Legend />
-      <StateDataTable isVisible={isVisible} setVisible={setVisible} setTable={setTable} setUsStateName={setUsStateName}/>
+      <StateDataTable
+        isVisible={isVisible}
+        setVisible={setVisible}
+        setTable={setTable}
+        setUsStateName={setUsStateName}
+      />
     </Layout>
   )
 }
