@@ -91,7 +91,9 @@ const Modal = ({ isVisible, setVisible, isTable, usStateName }) => {
                         <H2
                           bgColor={stateData.color}
                           color={
-                            stateData.recreationalStatus === "Yes" ? "#FFFFFF" : "#000000"
+                            stateData.recreationalStatus === "Yes"
+                              ? "#FFFFFF"
+                              : "#000000"
                           }
                         >
                           {stateData.state}
@@ -114,7 +116,11 @@ const Modal = ({ isVisible, setVisible, isTable, usStateName }) => {
                         </p>
                         <p>
                           CBD/Low THC Program:{" "}
-                          {stateData.cbdStatus === "Yes" ? <GreenCheck /> : <RedX />}
+                          {stateData.cbdStatus === "Yes" ? (
+                            <GreenCheck />
+                          ) : (
+                            <RedX />
+                          )}
                         </p>
                       </>
                     )}
@@ -124,7 +130,7 @@ const Modal = ({ isVisible, setVisible, isTable, usStateName }) => {
                         stateData.statePdfs.map(statePdf => {
                           return (
                             <div>
-                              <a href={statePdf.pdf.asset.url} download={statePdf.title}>
+                              <a href={`${statePdf.pdf.asset.url}?dl`}>
                                 <img
                                   src="https://res.cloudinary.com/crjars/image/upload/c_scale,f_auto,q_auto:best,w_56/v1588797628/pdf.svg"
                                   alt="PDF Icon"
@@ -135,7 +141,12 @@ const Modal = ({ isVisible, setVisible, isTable, usStateName }) => {
                           )
                         })
                       ) : (
-                        <img src="https://res.cloudinary.com/crjars/image/upload/c_scale,q_auto:best,w_360/v1589264926/very-thoon-gif.gif" alt="Coming soon gif"/>
+                        <>
+                          <img
+                            src="https://res.cloudinary.com/crjars/image/upload/c_scale,q_auto:best,w_360/v1589264926/very-thoon-gif.gif"
+                            alt="Coming soon gif"
+                          />
+                        </>
                       )}
                     </section>
                   </div>
