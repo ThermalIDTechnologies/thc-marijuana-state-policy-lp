@@ -27,9 +27,10 @@ const Layout = ({ children }) => {
       >
         <main>{children}</main>
         <footer style={{ textAlign: `center`, marginTop: `3rem` }}>
-          © {new Date().getFullYear()}, Built by
-          {` `}
-          Nathan Dalton
+          <small>
+            © {new Date().getFullYear()}, THC Label Solutions. All Rights
+            Reserved.
+          </small>
         </footer>
       </div>
     </>

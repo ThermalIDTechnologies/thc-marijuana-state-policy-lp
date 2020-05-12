@@ -1,7 +1,7 @@
-import React, { useRef } from "react"
+import React from "react"
 import { Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table"
 
-import { statesLegality } from "./../data/state-legal-status"
+import { useStateData } from "../hooks/useStateData"
 import { StyledTable, StyledTr } from "./styles/StyledDataTable"
 import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css"
 
@@ -11,26 +11,6 @@ const StateDataTable = ({
   setTable,
   setUsStateName,
 }) => {
-  const sortedStateData = () => {
-    function compare(a, b) {
-      // Use toUpperCase() to ignore character casing
-      const bandA = a.state.toUpperCase()
-      const bandB = b.state.toUpperCase()
-
-      let comparison = 0
-      if (bandA > bandB) {
-        comparison = 1
-      } else if (bandA < bandB) {
-        comparison = -1
-      }
-      return comparison
-    }
-
-    return [...statesLegality].sort(compare)
-  }
-
-  const stateRef = useRef(null)
-  console.log(stateRef)
 
   const handleClick = stateName => {
     console.log(stateName)
@@ -50,18 +30,18 @@ const StateDataTable = ({
         </Tr>
       </Thead>
       <Tbody>
-        {sortedStateData().map(stateData => {
+        {useStateData().map(stateData => {
           return (
             <StyledTr
-              onClick={() => handleClick(stateData.id)}
+              onClick={() => handleClick(stateData.sanityId)}
               style={{ cursor: `pointer` }}
-              key={stateData.id}
+              key={stateData.sanityId}
               backgroundColor={stateData.color}
             >
               <Td>{stateData.state}</Td>
-              <Td>{stateData.legal}</Td>
-              <Td>{stateData.medical}</Td>
-              <Td>{stateData.cbd}</Td>
+              <Td>{stateData.recreationalStatus}</Td>
+              <Td>{stateData.medicalStatus}</Td>
+              <Td>{stateData.cbdStatus}</Td>
             </StyledTr>
           )
         })}

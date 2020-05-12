@@ -2,14 +2,12 @@ import React from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
 import { ModalWrapper, ModalCard, H2 } from "./styles/StyledModal"
-import { statesLegality } from "./../data/state-legal-status"
+import { useStateData } from "./../hooks/useStateData"
 
 const Modal = ({ isVisible, setVisible, isTable, usStateName }) => {
-  const getStateData = statesLegality.filter(
-    stateData => stateData.id === usStateName
+  const getStateData = useStateData().filter(
+    stateData => stateData.sanityId === usStateName
   )
-
-  console.log(getStateData)
 
   const GreenCheck = () => {
     return (
@@ -87,20 +85,20 @@ const Modal = ({ isVisible, setVisible, isTable, usStateName }) => {
               </motion.button>
               {getStateData.map(stateData => {
                 return (
-                  <div key={stateData.id}>
+                  <div key={stateData.sanityId}>
                     {isTable === false && (
                       <>
                         <H2
                           bgColor={stateData.color}
                           color={
-                            stateData.legal === "Yes" ? "#FFFFFF" : "#000000"
+                            stateData.recreationalStatus === "Yes" ? "#FFFFFF" : "#000000"
                           }
                         >
                           {stateData.state}
                         </H2>
                         <p>
                           Recreational Cannabis Program:{" "}
-                          {stateData.legal === "Yes" ? (
+                          {stateData.recreationalStatus === "Yes" ? (
                             <GreenCheck />
                           ) : (
                             <RedX />
@@ -108,7 +106,7 @@ const Modal = ({ isVisible, setVisible, isTable, usStateName }) => {
                         </p>
                         <p>
                           Medical Cannabis Program:{" "}
-                          {stateData.medical === "Yes" ? (
+                          {stateData.medicalStatus === "Yes" ? (
                             <GreenCheck />
                           ) : (
                             <RedX />
@@ -116,23 +114,23 @@ const Modal = ({ isVisible, setVisible, isTable, usStateName }) => {
                         </p>
                         <p>
                           CBD/Low THC Program:{" "}
-                          {stateData.cbd === "Yes" ? <GreenCheck /> : <RedX />}
+                          {stateData.cbdStatus === "Yes" ? <GreenCheck /> : <RedX />}
                         </p>
                       </>
                     )}
                     <h3>{stateData.state} Downloadable Resources:</h3>
                     <section>
-                      {stateData.pdfLinks ? (
-                        stateData.pdfLinks.map(pdfLink => {
+                      {stateData.statePdfs ? (
+                        stateData.statePdfs.map(statePdf => {
                           return (
                             <div>
-                              <a href={pdfLink.link}>
+                              <a href={statePdf.pdf.asset.url} download={statePdf.title}>
                                 <img
                                   src="https://res.cloudinary.com/crjars/image/upload/c_scale,f_auto,q_auto:best,w_56/v1588797628/pdf.svg"
                                   alt="PDF Icon"
                                 />
                               </a>
-                              <p>{pdfLink.title}</p>
+                              <p>{statePdf.title}</p>
                             </div>
                           )
                         })
