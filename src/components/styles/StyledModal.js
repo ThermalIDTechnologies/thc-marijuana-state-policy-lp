@@ -59,7 +59,7 @@ export const ModalCard = styled(motion.div)(
       section {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: center;
 
         p {
           align-self: center;
@@ -75,6 +75,10 @@ export const ModalCard = styled(motion.div)(
             align-self: center;
             border-bottom: 2px ${props.theme.colors.biege} solid;
           }
+        }
+
+        div:nth-child(2) {
+          margin-left: 0.6rem;
         }
       }
     }
