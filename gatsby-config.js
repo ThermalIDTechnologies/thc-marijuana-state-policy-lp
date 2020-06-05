@@ -4,7 +4,7 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `THC Solutions Cannabis Policy Page`,
+    title: `THC Label Solutions Cannabis Regulations`,
     description: `Find information on Cannabis policies within the United States with our interactive map!`,
     author: `@`,
   },

@@ -65,6 +65,11 @@ export const ModalCard = styled(motion.div)(
           align-self: center;
         }
 
+        h4 {
+          margin: 0 auto;
+          color: red;
+        }
+
         div {
           a {
             align-self: center;

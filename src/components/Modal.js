@@ -141,12 +141,7 @@ const Modal = ({ isVisible, setVisible, isTable, usStateName }) => {
                           )
                         })
                       ) : (
-                        <>
-                          <img
-                            src="https://res.cloudinary.com/crjars/image/upload/c_scale,q_auto:best,w_360/v1589264926/very-thoon-gif.gif"
-                            alt="Coming soon gif"
-                          />
-                        </>
+                        <h4>Coming Soon!</h4>
                       )}
                     </section>
                   </div>
