@@ -130,7 +130,7 @@ const Modal = ({ isVisible, setVisible, isTable, usStateName }) => {
                         stateData.statePdfs.map(statePdf => {
                           return (
                             <div>
-                              <a href={`${statePdf.pdf.asset.url}?dl`}>
+                              <a href={statePdf.utm_url}>
                                 <img
                                   src="https://res.cloudinary.com/crjars/image/upload/c_scale,f_auto,q_auto:best,w_56/v1588797628/pdf.svg"
                                   alt="PDF Icon"

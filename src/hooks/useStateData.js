@@ -15,11 +15,7 @@ export const useStateData = () => {
             _createdAt
             statePdfs {
               title
-              pdf {
-                asset {
-                  url
-                }
-              }
+              utm_url
             }
           }
         }
