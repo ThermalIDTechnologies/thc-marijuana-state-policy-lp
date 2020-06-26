@@ -141,7 +141,7 @@ const DownloadForm = ({ usState }) => {
         >
           Submit
         </Btn>
-        <small>*By submitting this form, you agree to receive marketing emails to the address provided above. No purchase necessary. To unsubscribe, click the unsubscribe link at the button of the email.</small>
+        <small>*By submitting this form, you agree to receive marketing emails to the address provided above. No purchase necessary. To unsubscribe, click the unsubscribe link at the bottom of the email.</small>
         <Recaptcha
           ref={e => (recaptchaInstance = e)}
           sitekey="6LcECKkZAAAAAEQc1pFLriwO5RvQKvXWBjTfdUpQ"
