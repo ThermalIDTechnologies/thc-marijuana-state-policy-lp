@@ -1,13 +1,18 @@
-import React from "react"
+import React, { useContext } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
-import { ModalWrapper, ModalCard, H2 } from "./styles/StyledModal"
+import { ModalWrapper, ModalCard, CloseBtn, H2 } from "./styles/StyledModal"
 import { useStateData } from "./../hooks/useStateData"
+import DownloadForm from "./DownloadForm"
+import { FormAuthContext } from "../context/FormAuthContext"
 
 const Modal = ({ isVisible, setVisible, isTable, usStateName }) => {
   const getStateData = useStateData().filter(
     stateData => stateData.sanityId === usStateName
   )
+
+  const { success } = useContext(FormAuthContext)
+  console.log(success)
 
   const GreenCheck = () => {
     return (
@@ -70,7 +75,7 @@ const Modal = ({ isVisible, setVisible, isTable, usStateName }) => {
                 delay: 0.3,
               }}
             >
-              <motion.button
+              <CloseBtn
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.8 }}
                 transition={{
@@ -82,7 +87,7 @@ const Modal = ({ isVisible, setVisible, isTable, usStateName }) => {
                 onClick={() => setVisible(!isVisible)}
               >
                 &#10006;
-              </motion.button>
+              </CloseBtn>
               {getStateData.map(stateData => {
                 return (
                   <div key={stateData.sanityId}>
@@ -127,19 +132,25 @@ const Modal = ({ isVisible, setVisible, isTable, usStateName }) => {
                     <h3>{stateData.state} Downloadable Resources:</h3>
                     <section>
                       {stateData.statePdfs[0] ? (
-                        stateData.statePdfs.map(statePdf => {
-                          return (
-                            <div>
-                              <a href={statePdf.utm_url}>
-                                <img
-                                  src="https://res.cloudinary.com/crjars/image/upload/c_scale,f_auto,q_auto:best,w_56/v1588797628/pdf.svg"
-                                  alt="PDF Icon"
-                                />
-                              </a>
-                              <p>{statePdf.title}</p>
-                            </div>
-                          )
-                        })
+                        <>
+                          {success ? (
+                            stateData.statePdfs.map(statePdf => {
+                              return (
+                                <div className="pdf">
+                                  <a href={statePdf.utm_url}>
+                                    <img
+                                      src="https://res.cloudinary.com/crjars/image/upload/c_scale,f_auto,q_auto:best,w_56/v1588797628/pdf.svg"
+                                      alt="PDF Icon"
+                                    />
+                                  </a>
+                                  <p>{statePdf.title}</p>
+                                </div>
+                              )
+                            })
+                          ) : (
+                            <DownloadForm usState={stateData.state} />
+                          )}
+                        </>
                       ) : (
                         <h4>Coming Soon!</h4>
                       )}

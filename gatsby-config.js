@@ -48,6 +48,16 @@ module.exports = {
         trackingId: "UA-83589888-1",
       },
     },
+    `gatsby-plugin-recaptcha`,
+    {
+      resolve: `gatsby-plugin-apollo`,
+      options: {
+        uri: `https://api.monday.com/v2/`,
+        headers: {
+          Authorization: `${process.env.MONDAY_API_TOKEN}`,
+        },
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

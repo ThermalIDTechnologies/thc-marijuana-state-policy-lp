@@ -29,25 +29,6 @@ export const ModalCard = styled(motion.div)(
     width: 100%;
     position: relative;
 
-    button {
-      align-self: flex-end;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: red;
-      position: absolute;
-      top: 8px;
-      right: 8px;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      border: none;
-      color: #fff;
-      font-weight: bolder;
-      cursor: pointer;
-      font-size: 1.1rem;
-    }
-
     h3 {
       align-self: center;
     }
@@ -77,13 +58,32 @@ export const ModalCard = styled(motion.div)(
           }
         }
 
-        div:nth-child(2) {
+        .pdf:nth-child(2) {
           margin-left: 0.6rem;
         }
       }
     }
   `
 )
+
+export const CloseBtn = styled(motion.button)`
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: red;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  color: #fff;
+  font-weight: bolder;
+  cursor: pointer;
+  font-size: 1.1rem;
+`
 
 export const H2 = styled.h2(
   props => css`
